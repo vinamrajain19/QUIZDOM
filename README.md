@@ -1,4 +1,6 @@
-                                                                                # QUIZDOM🧠
+# <p align="center">
+QUIZDOM🧠
+</p>
 
 
 # Overview
