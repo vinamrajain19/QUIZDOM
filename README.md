@@ -1,6 +1,6 @@
-# <p align="center">
+# <h1 align="center">
 QUIZDOM🧠
-</p>
+</h1>
 
 
 # Overview
