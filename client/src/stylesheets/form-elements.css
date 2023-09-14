@@ -17,6 +17,7 @@ button {
   height: 40px !important;
 }
 .primary-content-btn {
+  width: 250px;
   background-color: var(--primary);
   color: white;
 }
@@ -25,4 +26,10 @@ button {
   background-color: white;
   color: var(--primary);
   border: 2px solid var(--primary);
+}
+
+.buttton {
+  width: 250px;
+  background-color: #6ca1e3;
+  color: white;
 }

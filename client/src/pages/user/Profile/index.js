@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import PageTitle from "../../../components/PageTitle";
 import { useNavigate } from "react-router-dom";
+import background from "../../../images/p1.jpg";
 
 function Profile() {
 
@@ -10,33 +11,47 @@ function Profile() {
     //const dispatch = useDispatch();
     const { user } = useSelector((state) => state.users);
 
+    const mystyle = {
+        backgroundImage: `url(${background})`,
+        height: '100vh',
+        marginTop: '-70px',
+        fontSize: '20px',
+        backgroundSize: 'cover',
+        opacity: 1,
+        backgroundRepeat: 'no-repeat',
+    };
+
     return (
-        <div >
+        <div>
             <PageTitle title={"Profile"} />
-            <div className="divider"></div>
-            <Row gutter={[16, 16]}>
-                <Col span={6}>
-                    <div className="card-lg flex flex-col gap-1 p-2 divcenter">
-                        <h1 className="text-2xl"></h1>
+            < div className="divider" ></div >
+            <div style={mystyle}>
 
-                        <h1 className="text-lg">Name : {user.name}</h1>
+                <div className="flex flex-col justifyContent:center gap-1 p-2 " style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: '100vh',
+                    boxShadow: '0 0 2px rgb(128, 128, 128)',
+                    opacity: 2,
+                }}>
 
-                        <h1 className="text-lg">Role : {user.isAdmin === false ? "User" : "Admin"}</h1>
-                        <h1 className="text-lg">Email : {user.email}</h1>
+                    <h1 className="text"><span style={{ fontWeight: 'bold' }}>Name : </span><span style={{ fontWeight: 'bold' }}>{user.name}</span></h1>
+                    <h1 className="text"><span style={{ fontWeight: 'bold' }}>Role : </span><span style={{ fontWeight: 'bold' }}>{user.isAdmin === false ? "User" : "Admin"}</span></h1>
+                    <h1 className="text"><span style={{ fontWeight: 'bold' }}>Email : </span><span style={{ fontWeight: 'bold' }}>{user.email}</span></h1>
 
-                        <button
-                            className="primary-content-btn"
-                            onClick={() => navigate("/")}
-                        >
-                            Home
-                        </button>
+                    <button
+                        className="primary-content-btn"
+                        onClick={() => navigate("/")}
+                    >
+                        Home
+                    </button>
 
 
+                </div>
+            </div>
 
-                    </div>
-                </Col>
-            </Row>
-        </div>
+        </div >
     )
 }
 

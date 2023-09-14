@@ -42,3 +42,8 @@
   border-radius: 5px;
   align-items: center !important;
 }
+
+.page {
+  margin: 20px;
+  height: 100%;
+}
