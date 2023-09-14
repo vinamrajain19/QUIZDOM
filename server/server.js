@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const app = express();
 require('dotenv').config();
 app.use(express.json());
@@ -12,19 +11,23 @@ const usersRoute = require('./routes/usersRoute');
 const examsRoute = require("./routes/examsRoute");
 const reportsRoute = require("./routes/reportsRoute");
 
-app.use(cors(
-    {
-        origin: ["https://deploy-quizdom-1whq.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
-
 app.use("/api/users", usersRoute);
 app.use("/api/exams", examsRoute);
 app.use("/api/reports", reportsRoute);
 
 const port = process.env.port || 5000;
+
+// deployment config
+const path = require("path");
+__dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "/client/build")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    });
+}
+
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 })
