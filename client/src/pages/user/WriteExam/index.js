@@ -112,6 +112,12 @@ function WriteExam() {
         }
     }, []);
 
+    useEffect(() => {
+        if (secondsLeft === 0 && view === "questions" && !timeUp) {
+            setTimeUp(true);
+        }
+    }, [secondsLeft]);
+
     const mystyle = {
         backgroundImage: `url(${background})`,
         height: '100vh',
