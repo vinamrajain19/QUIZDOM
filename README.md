@@ -9,3 +9,9 @@ QUIZDOM is a web application for all kinds of users. Users can simply log in to 
 ## ⏯ Preview
 
 Take a look at the live <a href="https://quizdom.onrender.com/" target="_blank">Preview of the app.</a>.
+
+## 👨‍💻 Tech Stack
+React.js<br></br>
+Node.js<br></br>
+Express.js<br></br>
+MongoDB<br></br>
